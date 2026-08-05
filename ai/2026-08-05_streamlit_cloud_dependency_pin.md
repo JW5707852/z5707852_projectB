@@ -27,5 +27,8 @@ artifacts.
 
 Student confirmation received: pin the deployment dependency to Streamlit
 1.58.0, which was used for the successful local app and AppTest checks. The
-next deployment must be checked in Cloud to confirm the platform health check
-now succeeds.
+first redeploy showed that this was incomplete: Cloud still selected
+Starlette 1.4.0, while the tested environment uses Starlette 1.3.1. Pin
+Starlette 1.3.1 as well; its GZip responder signature matches the Streamlit
+1.58.0 middleware call. The next deployment must be checked in Cloud to
+confirm the platform health check now succeeds.
