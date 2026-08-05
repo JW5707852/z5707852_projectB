@@ -417,7 +417,7 @@ def _render_fact_sheet(artifacts: AppArtifacts) -> None:
     )
     selector, context = st.columns([2.2, 1], vertical_alignment="bottom")
     funds = list(FUND_LABELS)
-    with selector:
+    with selector, st.container(border=True):
         selected_fund = st.selectbox(
             "Fund",
             funds,
@@ -1753,6 +1753,17 @@ def _render_css() -> None:
         border: 1px solid var(--pf-border);
         border-radius: 0.18rem;
         overflow: hidden;
+    }
+    [data-testid="stSelectbox"] [data-baseweb="select"] > div {
+        background: #ffffff !important;
+        border: 1px solid var(--pf-border) !important;
+        border-radius: 0.24rem !important;
+        box-shadow: inset 0 -1px 0 #f3f6f8;
+        min-height: 2.55rem;
+    }
+    [data-testid="stSelectbox"] [data-baseweb="select"] > div > div:last-child {
+        border-left: 1px solid var(--pf-border);
+        padding-left: 0.55rem;
     }
     [data-testid="stSelectbox"] > div > div,
     [data-testid="stNumberInput"] input,
