@@ -1,0 +1,83 @@
+{
+  "batch_size": 32,
+  "cache_policy": "external Hugging Face cache outside submission folder",
+  "claims_status": "accuracy, superiority, and predictive claims pending student review or out of scope",
+  "clean_headline_rows": 146836,
+  "core_artifact_integrity_refresh": {
+    "reason": "core fund-family artifact update after FinBERT Phase 2",
+    "scope": "hash evidence only; FinBERT title scores and derived outputs unchanged"
+  },
+  "correlation_policy": "reported only for matched observed date-sector pairs; headline-level correlations suppressed",
+  "coverage_reconciliation": {
+    "coverage_mismatch_count": 0,
+    "sector_grid_rows_compared": 10060
+  },
+  "device": "mps",
+  "diagnostic_review_rows": 50,
+  "distinct_title_count": 105334,
+  "figure_visual_qa_status": "PASS after margin and overlap correction",
+  "finite_probability_rows": 105334,
+  "full_phase2_wall_seconds": 400.8979937500044,
+  "generated_file_count": 17,
+  "huggingface_hub_version": "1.26.0",
+  "inference_seconds": 387.2835290420044,
+  "join_validation": {
+    "clean_rows_before_join": 146836,
+    "matched_rows": 146836,
+    "multiplied_rows": 0,
+    "outside_equity_sample_rows": 6,
+    "rows_after_join": 146836,
+    "unmatched_rows": 0
+  },
+  "label_mapping": {
+    "0": "positive",
+    "1": "negative",
+    "2": "neutral"
+  },
+  "manual_review_status": "pending student review",
+  "matched_sector_day_count": 9832,
+  "max_length": 128,
+  "maximum_observed_token_length": 84,
+  "maximum_probability_sum": 1.000000149011612,
+  "minimum_probability_sum": 0.9999998603016138,
+  "model_license": "Apache-2.0",
+  "model_load_seconds": 3.2596278749988414,
+  "model_name": "ProsusAI/finbert",
+  "observed_sector_day_count": 9832,
+  "peak_rss_after_model_mb": 1220.015625,
+  "peak_rss_before_model_mb": 737.59375,
+  "peak_rss_mb": 1220.015625,
+  "peak_rss_model_increment_mb": 482.421875,
+  "phase": "phase_2_full_corpus",
+  "phase_status": "PASS",
+  "pinned_revision": "4556d13015211d73dccd3fdd39d39232506f3e43",
+  "postprocessing_refresh_seconds": 9.558080582995899,
+  "protected_artifact_hashes_after": {
+    "results/data/fund_returns.csv": "9ce24c5efc72c724b3e81b9dbddf09230538df47b6a89b940b47368a84916838",
+    "results/data/fund_weights.csv": "e23b5be8c637498f49ad7d6699d0da07545c36225c1e0fe9c3872a15d6dd956e",
+    "results/data/sector_sentiment_index.csv": "4b809ee46ca83a697775869eb20de2a5920d98fb25d863e0fb2ec205e4ff421f",
+    "results/tables/performance_metrics.csv": "d95d2fb01eebf07bdb9a677a55d30e4298161499409827c56bbd1e587bd50d46"
+  },
+  "protected_artifact_hashes_before": {
+    "results/data/fund_returns.csv": "9ce24c5efc72c724b3e81b9dbddf09230538df47b6a89b940b47368a84916838",
+    "results/data/fund_weights.csv": "e23b5be8c637498f49ad7d6699d0da07545c36225c1e0fe9c3872a15d6dd956e",
+    "results/data/sector_sentiment_index.csv": "4b809ee46ca83a697775869eb20de2a5920d98fb25d863e0fb2ec205e4ff421f",
+    "results/tables/performance_metrics.csv": "d95d2fb01eebf07bdb9a677a55d30e4298161499409827c56bbd1e587bd50d46"
+  },
+  "representative_review_rows": 100,
+  "resolved_revision": "4556d13015211d73dccd3fdd39d39232506f3e43",
+  "score_arithmetic_validated_rows": 105334,
+  "score_definition": "probability_positive - probability_negative",
+  "sector_grid_rows": 10060,
+  "text_input": "unchanged text_raw",
+  "ticker_day_count": 37962,
+  "titles_per_second": 271.98161579594466,
+  "torch_version": "2.12.1",
+  "transformers_version": "5.14.1",
+  "truncated_title_count": 0,
+  "truncated_title_percentage": 0.0,
+  "warnings": [
+    "upstream BERT tokenizer deprecation warning (non-blocking)",
+    "unauthenticated public-model request warning may occur (non-blocking; no secret added)"
+  ]
+}

@@ -1,0 +1,15 @@
+# Build / reproduction-only dependencies (NOT needed by the deployed app).
+# Install alongside requirements.txt to run scripts/run_part_b.py end to end:
+#     pip install -r requirements.txt -r requirements-dev.txt
+# Keep these OUT of the deployed app so Streamlit cold starts stay fast - the app
+# should load precomputed artifacts from results/, not score sentiment at runtime.
+nltk>=3.8
+scipy>=1.11
+pyarrow>=12.0
+requests>=2.31
+matplotlib>=3.7
+# Build-only neural sentiment robustness layer. These packages are intentionally
+# excluded from requirements.txt because Streamlit reads precomputed artifacts.
+transformers==5.14.1
+huggingface-hub==1.26.0
+torch==2.12.1

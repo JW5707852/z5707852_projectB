@@ -1,0 +1,34 @@
+[server]
+headless = true
+
+[browser]
+gatherUsageStats = false
+
+[theme]
+base = "light"
+primaryColor = "#0E7C66"
+backgroundColor = "#F4F7F9"
+secondaryBackgroundColor = "#FFFFFF"
+textColor = "#14283D"
+font = "sans serif"
+headingFont = "sans serif"
+baseRadius = "0.5rem"
+borderColor = "#DCE4EB"
+showSidebarBorder = true
+chartCategoricalColors = [
+    "#145DA0",
+    "#0E7C66",
+    "#6C5CE7",
+    "#D17B0F",
+    "#8C657E",
+    "#35618F",
+    "#C75C72",
+    "#4E8B57",
+]
+
+[theme.sidebar]
+primaryColor = "#30C5A4"
+backgroundColor = "#0B1F33"
+secondaryBackgroundColor = "#102B43"
+textColor = "#EAF0F6"
+borderColor = "#203B53"

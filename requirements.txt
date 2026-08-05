@@ -1,0 +1,7 @@
+streamlit>=1.58,<2
+pandas>=2.0
+numpy>=1.24
+plotly>=6.0,<7
+# App (deploy) dependencies only. Build and reproduction tools live in
+# requirements-dev.txt. Install both files for a clean-machine reproduction; deploy
+# only this file so the app loads precomputed results with a fast cold start.

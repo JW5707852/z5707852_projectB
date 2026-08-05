@@ -1,0 +1,58 @@
+{
+  "claims_status": "Manual classification evidence only; no return predictability or investment-superiority claim.",
+  "completed_review_sha256": "01596b8885a44b9552fb676041e5a16376990fdbb87f9d1b38e18b7b5b2ce26b",
+  "confidence_counts": {
+    "high": 136,
+    "low": 2,
+    "medium": 12
+  },
+  "confidence_interval_policy": "Approximate 95% Wilson interval for weighted accuracy using Kish effective sample size; other metric intervals not reported.",
+  "diagnostic_policy": "Fifty disagreement-enriched rows excluded from performance metrics; categories assigned only when supported by a student comment.",
+  "diagnostic_rows": 50,
+  "generated_artifact_hashes": {
+    "results/figures/sentiment_manual_validation_comparison.caption.md": "c43d0e5e834053530ba698e35714baeda4b3136488b080d9bd87aa64e319085d",
+    "results/figures/sentiment_manual_validation_comparison.png": "5779b9cee6387047a9d63de0735f7e54d73b83e67a522add24782c9e6b31bb7d",
+    "results/tables/sentiment_manual_error_analysis.csv": "1d287012262be316e0f06aaa31d15dbb2f95388f423e169fc07ccde95179d475",
+    "results/tables/sentiment_manual_review_completed.csv": "01596b8885a44b9552fb676041e5a16376990fdbb87f9d1b38e18b7b5b2ce26b",
+    "results/tables/sentiment_manual_validation_confusion.csv": "774f25cc6b84ea0a140b89ad75ba16fe3665ccfc70a180e812d79968eb81906f",
+    "results/tables/sentiment_manual_validation_joined.csv": "f5229daf7f74aec2004305e5507dac866fa5f2d330f991498c62639e1ce4172f",
+    "results/tables/sentiment_manual_validation_metrics.csv": "7508dab4c2470dfa24421cda92e5fffa2abdf7e64dda3e9526c71c333277429d"
+  },
+  "label_counts": {
+    "negative": 26,
+    "neutral": 51,
+    "positive": 73
+  },
+  "mcnemar_policy": "Two-sided exact unweighted McNemar test on the same 100 representative headlines; small-sample and sampling-design limitations apply.",
+  "normalised_confidence_whitespace_count": 136,
+  "paired_comparison": {
+    "both_correct": 34,
+    "both_wrong": 34,
+    "discordant_pairs": 32,
+    "finbert_only_correct": 19,
+    "mcnemar_exact_p_value": 0.37708558747544885,
+    "vader_only_correct": 13,
+    "weighted_accuracy_difference_finbert_minus_vader": 0.06250837472095555
+  },
+  "phase": "phase_4_student_labelled_validation",
+  "phase_status": "PASS",
+  "protected_artifact_hashes_after": {
+    "results/data/fund_returns.csv": "9688e72738949a93193c2e154bbf31a0088b6fe9d4aea7817d513084de5e2502",
+    "results/data/fund_weights.csv": "660e64e9173c147764f7bae523fcb9885f982722be88aae12a3832eb505a7865",
+    "results/data/sector_sentiment_index.csv": "4b809ee46ca83a697775869eb20de2a5920d98fb25d863e0fb2ec205e4ff421f",
+    "results/tables/performance_metrics.csv": "8e35b069717df0d909b6678a05dd3f90dc8a81ca00e2e1bb3619a38728533910"
+  },
+  "protected_artifact_hashes_before": {
+    "results/data/fund_returns.csv": "9688e72738949a93193c2e154bbf31a0088b6fe9d4aea7817d513084de5e2502",
+    "results/data/fund_weights.csv": "660e64e9173c147764f7bae523fcb9885f982722be88aae12a3832eb505a7865",
+    "results/data/sector_sentiment_index.csv": "4b809ee46ca83a697775869eb20de2a5920d98fb25d863e0fb2ec205e4ff421f",
+    "results/tables/performance_metrics.csv": "8e35b069717df0d909b6678a05dd3f90dc8a81ca00e2e1bb3619a38728533910"
+  },
+  "representative_rows": 100,
+  "restored_text_count": 2,
+  "review_rows": 150,
+  "reviewer_attestation": "Single-student project: the student explicitly confirmed sole authorship of all manual labels; repeated row-level reviewer entries were intentionally left blank.",
+  "source_input_sha256": "9378eadc9dd8da78579bb00aefe186215db8a2a32e38e643c771434bc2b82d28",
+  "student_comment_rows": 4,
+  "text_repair_policy": "Canonical text_raw restored by review_id only; student fields unchanged."
+}

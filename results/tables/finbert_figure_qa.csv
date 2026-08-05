@@ -1,0 +1,4 @@
+figure,source_rows,png_width_pixels,png_height_pixels,layout_issue_count,blank_image_issue_count,qa_status
+sentiment_model_score_distribution,105334,1829,1128,0,0,PASS
+sentiment_model_sector_timeseries,9832,1902,2619,0,0,PASS
+sentiment_model_sector_agreement,9832,1829,1425,0,0,PASS

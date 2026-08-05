@@ -1,0 +1,37 @@
+model,metric,value,ci_low,ci_high,ci_method,sample_purpose,sample_count,sampling_weight_sum,effective_sample_size
+VADER,accuracy,0.46820777354935367,0.3725752190848799,0.566234303618697,Approximate 95% Wilson interval using Kish effective sample size,representative_evaluation,100,105334.0,98.18842693079716
+VADER,balanced_accuracy,0.46360752487348317,,,not reported,representative_evaluation,100,105334.0,98.18842693079716
+VADER,macro_precision,0.46121814689027607,,,not reported,representative_evaluation,100,105334.0,98.18842693079716
+VADER,macro_recall,0.46360752487348317,,,not reported,representative_evaluation,100,105334.0,98.18842693079716
+VADER,macro_f1,0.4461795120529997,,,not reported,representative_evaluation,100,105334.0,98.18842693079716
+VADER,precision_negative,0.38992094931497656,,,not reported,representative_evaluation,100,105334.0,98.18842693079716
+VADER,recall_negative,0.3581735392525784,,,not reported,representative_evaluation,100,105334.0,98.18842693079716
+VADER,predicted_negative_rate,0.127930022142717,,,not reported,representative_evaluation,100,105334.0,98.18842693079716
+VADER,precision_neutral,0.4201817987683588,,,not reported,representative_evaluation,100,105334.0,98.18842693079716
+VADER,recall_neutral,0.6601760687074282,,,not reported,representative_evaluation,100,105334.0,98.18842693079716
+VADER,predicted_neutral_rate,0.5336903609109165,,,not reported,representative_evaluation,100,105334.0,98.18842693079716
+VADER,precision_positive,0.5735516925874928,,,not reported,representative_evaluation,100,105334.0,98.18842693079716
+VADER,recall_positive,0.37247296666044294,,,not reported,representative_evaluation,100,105334.0,98.18842693079716
+VADER,predicted_positive_rate,0.3383796169463665,,,not reported,representative_evaluation,100,105334.0,98.18842693079716
+FinBERT,accuracy,0.5307161482703092,0.432717548930578,0.6264018014013556,Approximate 95% Wilson interval using Kish effective sample size,representative_evaluation,100,105334.0,98.18842693079716
+FinBERT,balanced_accuracy,0.5160619939275305,,,not reported,representative_evaluation,100,105334.0,98.18842693079716
+FinBERT,macro_precision,0.5817452659929041,,,not reported,representative_evaluation,100,105334.0,98.18842693079716
+FinBERT,macro_recall,0.5160619939275305,,,not reported,representative_evaluation,100,105334.0,98.18842693079716
+FinBERT,macro_f1,0.475894523756436,,,not reported,representative_evaluation,100,105334.0,98.18842693079716
+FinBERT,precision_negative,0.4490625893375877,,,not reported,representative_evaluation,100,105334.0,98.18842693079716
+FinBERT,recall_negative,0.27661708580067723,,,not reported,representative_evaluation,100,105334.0,98.18842693079716
+FinBERT,predicted_negative_rate,0.085788222859349,,,not reported,representative_evaluation,100,105334.0,98.18842693079716
+FinBERT,precision_neutral,0.44955770127090766,,,not reported,representative_evaluation,100,105334.0,98.18842693079716
+FinBERT,recall_neutral,0.9392833597816367,,,not reported,representative_evaluation,100,105334.0,98.18842693079716
+FinBERT,predicted_neutral_rate,0.7097052279054291,,,not reported,representative_evaluation,100,105334.0,98.18842693079716
+FinBERT,precision_positive,0.846615507370217,,,not reported,representative_evaluation,100,105334.0,98.18842693079716
+FinBERT,recall_positive,0.33228553620027756,,,not reported,representative_evaluation,100,105334.0,98.18842693079716
+FinBERT,predicted_positive_rate,0.20450654923522188,,,not reported,representative_evaluation,100,105334.0,98.18842693079716
+Paired comparison,both_correct,34.0,,,not reported,representative_evaluation,100,105333.99999999999,98.18842693079716
+Paired comparison,vader_only_correct,13.0,,,not reported,representative_evaluation,100,105333.99999999999,98.18842693079716
+Paired comparison,finbert_only_correct,19.0,,,not reported,representative_evaluation,100,105333.99999999999,98.18842693079716
+Paired comparison,both_wrong,34.0,,,not reported,representative_evaluation,100,105333.99999999999,98.18842693079716
+Paired comparison,discordant_pairs,32.0,,,not reported,representative_evaluation,100,105333.99999999999,98.18842693079716
+Paired comparison,mcnemar_exact_p_value,0.37708558747544885,,,not reported,representative_evaluation,100,105333.99999999999,98.18842693079716
+Paired comparison,weighted_accuracy_difference_finbert_minus_vader,0.06250837472095555,,,not reported,representative_evaluation,100,105333.99999999999,98.18842693079716
+Paired comparison,representative_weight_sum,105333.99999999999,,,not reported,representative_evaluation,100,105333.99999999999,98.18842693079716

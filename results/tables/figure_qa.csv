@@ -1,0 +1,7 @@
+figure,png_path,pdf_path,caption_path,source_rows,width_inches,height_inches,png_width_pixels,png_height_pixels,minimum_font_points,blank_image_issues,layout_issue_count,qa_status
+growth_of_1_comparison,results/figures/growth_of_1_comparison.png,results/figures/growth_of_1_comparison.pdf,results/figures/growth_of_1_comparison.caption.md,6777,6.27,4.5,1829,1334,8.0,0,0,PASS
+drawdown_equity_sentiment_tilt,results/figures/drawdown_equity_sentiment_tilt.png,results/figures/drawdown_equity_sentiment_tilt.pdf,results/figures/drawdown_equity_sentiment_tilt.caption.md,753,6.27,3.75,1829,1079,8.0,0,0,PASS
+combined_weights_over_time,results/figures/combined_weights_over_time.png,results/figures/combined_weights_over_time.pdf,results/figures/combined_weights_over_time.caption.md,1260,6.27,8.25,1829,2432,8.0,0,0,PASS
+return_risk_comparison,results/figures/return_risk_comparison.png,results/figures/return_risk_comparison.pdf,results/figures/return_risk_comparison.caption.md,9,6.27,4.2,1812,1006,8.0,0,0,PASS
+sector_sentiment_time_series,results/figures/sector_sentiment_time_series.png,results/figures/sector_sentiment_time_series.pdf,results/figures/sector_sentiment_time_series.caption.md,10060,6.27,7.35,1829,2159,8.0,0,0,PASS
+fusion_before_after,results/figures/fusion_before_after.png,results/figures/fusion_before_after.pdf,results/figures/fusion_before_after.caption.md,1506,6.27,5.05,1829,1493,8.0,0,0,PASS

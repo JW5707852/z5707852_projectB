@@ -1,0 +1,35 @@
+{
+  "completion_status": "PASS",
+  "file_count": 16,
+  "files": {
+    "results/data/finbert_title_scores.csv": "b33ba64cf616b3a016ed9bf46c6e2f3b95092ea451a26a5ae546e9bcee0969e5",
+    "results/data/sector_sentiment_finbert.csv": "7610578f9a7db1091d1c8c97d526e914fe4a6f50488358f1a6f2b33c19df92af",
+    "results/figures/sentiment_model_score_distribution.caption.md": "1a992a089124f592c37a4821e298cf8122fa32edd096a9dd75ac765d20e289b3",
+    "results/figures/sentiment_model_score_distribution.pdf": "bd11b2ebfbd4a2a7587d6b4caf5d6529bdfc52154a35b23e7d5e32d98fc1b3e5",
+    "results/figures/sentiment_model_score_distribution.png": "e4be472779b0a453bd16a7d3b7749e6ca8b2f06af97c681afbfd628755a21257",
+    "results/figures/sentiment_model_sector_agreement.caption.md": "972ed9b7741fe866500d68614dfcb86178eb0426372545d37213e636a320d7bf",
+    "results/figures/sentiment_model_sector_agreement.pdf": "9cb5db5c41de113f83f65261a71e591f2b45403466d3287d30d4b3b21b72e937",
+    "results/figures/sentiment_model_sector_agreement.png": "8cbc22e72a8b3ee7238d405edbcc97b2717932480257ed409e84961df034a2c2",
+    "results/figures/sentiment_model_sector_timeseries.caption.md": "dfceb309c64e73d3142a004b37d534076d716ca9f54f388b702cfc4e2bbd92a2",
+    "results/figures/sentiment_model_sector_timeseries.pdf": "31ab8e21dd9079cd253521e60c4c9704173881d5ac29d890fa8eab0b7a05cd28",
+    "results/figures/sentiment_model_sector_timeseries.png": "afe8ab28861166d7ed851dacc36c0ee7612bac6bcaf4e05ab6417849736ac4f3",
+    "results/tables/finbert_figure_qa.csv": "cd9870c4c998d80830280eba27dbe11034d838f6409c66091310ed4c878b3913",
+    "results/tables/finbert_run_metadata.json": "17c254c9dd737efc86f29153bbf9c188a7d22639f8446583a585dac7003cb1b2",
+    "results/tables/sentiment_manual_review_template.csv": "b0f723dd9be525fc925d4275ab986da7739474f69af8f56d7589606696a2b438",
+    "results/tables/sentiment_model_comparison.csv": "0850e3c150304efea8aa4aab5d51725f97205769bf715626c855ffb993d64d22",
+    "results/tables/sentiment_model_disagreements.csv": "491d734c12864f880011b3fd8987c6347715c7bb31b3056ec37e5c4fe812ad66"
+  },
+  "phase": "phase_2_full_corpus",
+  "protected_artifact_hashes_after": {
+    "results/data/fund_returns.csv": "9ce24c5efc72c724b3e81b9dbddf09230538df47b6a89b940b47368a84916838",
+    "results/data/fund_weights.csv": "e23b5be8c637498f49ad7d6699d0da07545c36225c1e0fe9c3872a15d6dd956e",
+    "results/data/sector_sentiment_index.csv": "4b809ee46ca83a697775869eb20de2a5920d98fb25d863e0fb2ec205e4ff421f",
+    "results/tables/performance_metrics.csv": "d95d2fb01eebf07bdb9a677a55d30e4298161499409827c56bbd1e587bd50d46"
+  },
+  "protected_artifact_hashes_before": {
+    "results/data/fund_returns.csv": "9ce24c5efc72c724b3e81b9dbddf09230538df47b6a89b940b47368a84916838",
+    "results/data/fund_weights.csv": "e23b5be8c637498f49ad7d6699d0da07545c36225c1e0fe9c3872a15d6dd956e",
+    "results/data/sector_sentiment_index.csv": "4b809ee46ca83a697775869eb20de2a5920d98fb25d863e0fb2ec205e4ff421f",
+    "results/tables/performance_metrics.csv": "d95d2fb01eebf07bdb9a677a55d30e4298161499409827c56bbd1e587bd50d46"
+  }
+}
