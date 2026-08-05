@@ -50,7 +50,12 @@ def test_comparison_figures_cover_every_published_fund() -> None:
         .dropna(how="any")
     )
     expected_growth = (1.0 + common_returns).cumprod()
-    assert growth.layout.title.text.startswith("Common-period comparison, rebased to $1")
+    assert growth.layout.annotations[0].text.startswith(
+        "Common-period comparison, rebased to $1"
+    )
+    assert growth.layout.annotations[0].y == 1.16
+    assert growth.layout.xaxis.rangeselector.y == 1.0
+    assert growth.layout.xaxis.rangeselector.yanchor == "bottom"
     for trace in growth.data:
         fund = next(fund for fund, label in FUND_LABELS.items() if label == trace.name)
         assert list(trace.x) == list(common_returns.index)

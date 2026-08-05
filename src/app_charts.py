@@ -169,16 +169,25 @@ def growth_comparison_figure(
     )
     figure.update_yaxes(tickformat=".2f")
     figure.update_layout(
-        margin={"l": 84, "r": 18, "t": 52, "b": 76},
-        title={
-            "text": (
-                "Common-period comparison, rebased to $1 "
-                f"({common_growth.index.min():%d %b %Y}-{common_growth.index.max():%d %b %Y})"
-            ),
-            "x": 0,
-            "xanchor": "left",
-            "font": {"size": 13, "color": MUTED},
-        },
+        # Keep the date-range controls in a dedicated row below the chart title.
+        # Their previous y=1.08 position overlapped the date disclosure on
+        # narrower Streamlit Cloud layouts.
+        margin={"l": 84, "r": 18, "t": 92, "b": 76},
+    )
+    figure.add_annotation(
+        text=(
+            "Common-period comparison, rebased to $1 "
+            f"({common_growth.index.min():%d %b %Y}-{common_growth.index.max():%d %b %Y})"
+        ),
+        x=0,
+        y=1.16,
+        xref="paper",
+        yref="paper",
+        xanchor="left",
+        yanchor="bottom",
+        showarrow=False,
+        font={"size": 13, "color": MUTED},
+        align="left",
     )
     figure.update_xaxes(
         rangeslider={"visible": True, "thickness": 0.055, "bgcolor": "#EEF2F6"},
@@ -189,7 +198,8 @@ def growth_comparison_figure(
                 {"step": "all", "label": "All"},
             ],
             "x": 0,
-            "y": 1.08,
+            "y": 1.0,
+            "yanchor": "bottom",
             "bgcolor": "#F3F6F8",
             "activecolor": "#DDE8EE",
             "font": {"color": MUTED, "size": 11},
