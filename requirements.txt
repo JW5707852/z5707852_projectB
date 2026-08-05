@@ -1,4 +1,7 @@
-streamlit>=1.58,<2
+# Streamlit Community Cloud installed 1.61.0 from the previous range, whose
+# Starlette GZip middleware failed its health check. 1.58.0 is the version
+# exercised by this project's local app and AppTest suite.
+streamlit==1.58.0
 pandas>=2.0
 numpy>=1.24
 plotly>=6.0,<7
