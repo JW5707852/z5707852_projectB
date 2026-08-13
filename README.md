@@ -1,11 +1,12 @@
 # FinTech Project - Part B
 
-> FIRST: rename this folder to <yourZID>_projectB (for example z1234567_projectB)
-> and move it into fins-agent/fins2026/. The folder name carrying your zID is your
-> submission.
+PortFoYou is an investor-facing Streamlit application for comparing systematically
+managed funds, reviewing fund fact sheets, testing allocation scenarios, and
+exploring equity-sector news sentiment.
 
-Part B: funds, sentiment, and the app (DFF Stations 3-4). This folder is also your
-public GitHub repository; the app entrypoint is streamlit_app.py at the root.
+- Live application: https://z5707852projectb-crdypbfgqdwsyx35aw7t99.streamlit.app
+- Public repository: https://github.com/JW5707852/z5707852_projectB
+- App entrypoint: `streamlit_app.py`
 
 ## How to run
 
@@ -33,14 +34,12 @@ results/ - those ARE committed.
 
 ## Deploy + hand in
 
-This folder is its own GitHub repo, independent of fins-agent. Your AI agent can run
-the check and push the repo; the browser deploy is yours (it needs your login). See
-PROJECT_BRIEF.md Appendix D and docs/STUDENT_DEPLOY.md (in this folder). In short:
+This folder is its own GitHub repository, independent of fins-agent. Before a
+release, run:
 
     python scripts/check_handin.py        # your agent can run this
     # commit your precomputed app artifacts under results/ (the app reads them)
-    # git init in this folder, then push the contents to a NEW private GitHub repo
+    # commit the verified changes and push the main branch
 
-Then YOU connect the repo on share.streamlit.io (entrypoint streamlit_app.py). At
-hand-in, make the repo PUBLIC, submit the live URL + repo link, and also zip this
-whole folder and upload the zip to Moodle.
+The existing Streamlit Community Cloud application follows the repository's
+`main` branch and uses `streamlit_app.py` as its entrypoint.
