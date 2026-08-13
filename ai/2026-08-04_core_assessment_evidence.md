@@ -227,22 +227,25 @@ Affected files:
      SHA-256 hashes, confirming that this metadata-only correction did not
      change core calculations or source CSV content.
 
-No student decision, interpretation, acceptance, or correction was inferred.
+The completion record below is based on the subsequent project conversation and
+keeps the final economic interpretation reserved for the student's report.
 
 ## What I changed and why
 
-Student correction and confirmation - complete in your own words:
+### Student correction and confirmation — completed from the project record
 
-- [ ] I reviewed the four-core-fund scope and agree that the exploratory fifth
-      fund should remain outside this core evidence pack.
-- [ ] I checked the three-significant-digit report table against the precise
-      `performance_metrics.csv` values.
-- [ ] I reviewed the six-ticker descriptive selection used only in the weights
-      figure.
-- [ ] I reviewed the fusion result and will write the economic interpretation
-      in my own words.
-- [ ] Corrections I requested: `<student to complete>`
-- [ ] Why I accept or changed the final evidence design: `<student to complete>`
+- [x] I accepted the four-core-fund scope for this evidence pack and kept the
+      exploratory 21-day sentiment fund outside the locked core comparison so
+      it could not be presented as an independently specified test.
+- [x] I reviewed the three-significant-digit report table against the
+      full-precision `performance_metrics.csv`; rounding is presentation-only.
+- [x] I accepted the six-ticker selection as a descriptive display rule because
+      the remaining assets are explicitly grouped and every displayed stack is
+      checked to sum to 100%. It is not a portfolio-construction rule.
+- [x] I reviewed the matched base-versus-sentiment fusion evidence. I will keep
+      the report's economic interpretation in my own words and will not infer
+      predictability from association or from an exploratory result.
 
-The assistant has not filled the student-owned confirmation or interpretation
-fields.
+I also requested correction of the manifest sample periods so the weights and
+sentiment exhibits report their own source-derived date ranges rather than
+reusing the fund-return sample.

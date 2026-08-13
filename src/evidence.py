@@ -242,6 +242,91 @@ def build_intersected_comparison_paths(fund_returns: pd.DataFrame) -> pd.DataFra
     return comparison.reset_index(drop=True)
 
 
+def build_common_period_return_paths(fund_returns: pd.DataFrame) -> pd.DataFrame:
+    """Rebase core funds over one chronological window on native calendars.
+
+    The latest core-fund start and earliest core-fund end define the window.
+    Equity-calendar funds retain their trading observations and crypto-only
+    funds retain all seven-day observations inside that same date range.
+    """
+    paths = build_return_paths(fund_returns)
+    ranges = paths.groupby("fund")["date"].agg(["min", "max"])
+    comparison_start = ranges["min"].max()
+    comparison_end = ranges["max"].min()
+    if comparison_start > comparison_end:
+        raise EvidenceValidationError("core fund histories have no common date window")
+
+    comparison = paths.loc[
+        paths["date"].between(comparison_start, comparison_end)
+    ].copy()
+    if set(comparison["fund"]) != set(CORE_FUNDS):
+        raise EvidenceValidationError("common-period comparison is missing core funds")
+    comparison = comparison.sort_values(["fund", "date"], kind="mergesort")
+    comparison["growth_of_1"] = comparison.groupby("fund", sort=False)[
+        "daily_return"
+    ].transform(lambda values: (1.0 + values).cumprod())
+    comparison["drawdown"] = comparison.groupby("fund", sort=False)[
+        "growth_of_1"
+    ].transform(lambda wealth: wealth / wealth.cummax().clip(lower=1.0) - 1.0)
+    comparison["comparison_start_date"] = comparison_start
+    comparison["comparison_end_date"] = comparison_end
+    return comparison.reset_index(drop=True)
+
+
+def build_common_period_performance_table(
+    fund_returns: pd.DataFrame,
+) -> pd.DataFrame:
+    """Calculate report metrics over the shared window on native calendars."""
+    paths = build_common_period_return_paths(fund_returns)
+    records: list[dict[str, object]] = []
+    for fund in CORE_FUNDS:
+        group = paths.loc[paths["fund"].eq(fund)].sort_values("date")
+        values = group["daily_return"].to_numpy(dtype=float)
+        if len(values) < 2 or not np.isfinite(values).all():
+            raise EvidenceValidationError(f"invalid common-period returns for {fund}")
+        periods = 365 if group["asset_family"].iloc[0] == "crypto" else 252
+        wealth = np.cumprod(1.0 + values)
+        volatility = float(np.std(values, ddof=1) * np.sqrt(periods))
+        sharpe = float(
+            np.mean(values) / np.std(values, ddof=1) * np.sqrt(periods)
+        )
+        running_peak = np.maximum.accumulate(np.concatenate(([1.0], wealth)))[1:]
+        maximum_drawdown = float(np.min(wealth / running_peak - 1.0))
+        records.append(
+            {
+                "fund": fund,
+                "fund_label": FUND_LABELS[fund],
+                "asset_family": group["asset_family"].iloc[0],
+                "method": group["method"].iloc[0],
+                "sample_start_date": group["comparison_start_date"].iloc[0],
+                "sample_end_date": group["comparison_end_date"].iloc[0],
+                "observations": len(values),
+                "periods_per_year": periods,
+                "risk_free_rate_pct": 0.0,
+                "final_growth_of_1_dollars": _round_significant(wealth[-1]),
+                "geometric_annual_return_pct": _round_significant(
+                    100.0 * (wealth[-1] ** (periods / len(values)) - 1.0)
+                ),
+                "annualised_volatility_pct": _round_significant(
+                    100.0 * volatility
+                ),
+                "sharpe_ratio": _round_significant(sharpe),
+                "maximum_drawdown_pct": _round_significant(
+                    100.0 * maximum_drawdown
+                ),
+                "calculation_definition": (
+                    f"Common chronological window; native calendar; "
+                    f"growth=product(1+r); geometric annual return="
+                    f"growth^({periods}/n)-1; volatility=sample SD(r)*sqrt({periods}); "
+                    f"Sharpe=mean(r)*{periods}/volatility at 0% risk-free; "
+                    "drawdown=wealth/running peak (including starting $1)-1."
+                ),
+                "source_artifact": "results/data/fund_returns.csv",
+            }
+        )
+    return pd.DataFrame.from_records(records)
+
+
 def build_combined_weight_history(fund_weights: pd.DataFrame) -> pd.DataFrame:
     """Aggregate combined-fund ticker weights into equity and crypto shares."""
     required = {
@@ -522,6 +607,8 @@ __all__ = [
     "build_combined_weight_history",
     "build_fusion_report_table",
     "build_performance_report_table",
+    "build_common_period_performance_table",
+    "build_common_period_return_paths",
     "build_intersected_comparison_paths",
     "build_return_paths",
     "build_sector_sentiment_series",

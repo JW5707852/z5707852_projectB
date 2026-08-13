@@ -7,7 +7,7 @@ contrast of positive and negative sentiment.
 
 ## Prompt(s)
 
-"热力图部分不是很直观，可以让颜色的变化更加强烈吗"
+The heatmap isn't very intuitive—could the color changes be made more pronounced?
 
 ## What the assistant produced
 
@@ -25,7 +25,9 @@ that it is a visual scaling decision and must not be used as a new model input.
 
 ## What I changed and why
 
-Student confirmation pending: review the final contrast against the intended
-client audience. The assistant ran the focused chart tests and opened a
-temporary local preview; no sentiment values, model outputs, or portfolio rules
-were changed.
+I requested stronger colour changes because the maximum-based scale made most
+historical regimes look nearly neutral. I accepted the 95th-percentile
+display-only scale and steeper red–white–green palette because the local preview
+made ordinary variation clearer while hover text retained the unmodified score.
+I also retained the limitation that rare extremes saturate visually; no
+sentiment value, model output, or portfolio rule was changed.

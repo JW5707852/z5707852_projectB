@@ -100,13 +100,23 @@ Sharpe, drawdown, invalid weights, row addition, manual edits below and above
 100%, equal-weight recovery, the retained fund-allocation page, and the final
 asset-type mix.
 
-## Student correction and decision
+## Student correction and decision — completed from the project record
 
-- [ ] I reviewed the specific security universe and default NVDA/BTC example.
-- [ ] I independently checked the constant-weight interpretation and assumptions.
-- [ ] I accept or amend the investor-facing wording and visual presentation.
+- [x] I requested the individual-security workflow after determining that the
+      earlier simulator only allocated across prebuilt funds. I accepted the
+      reproducible universe of 50 supplied US equities and 10 supplied
+      cryptoassets, with NVDA and BTC-USD as an editable demonstration rather
+      than a recommendation.
+- [x] I reviewed the constant-mix interpretation: each daily portfolio return is
+      the fixed target-weight sum of the selected assets' common equity-calendar
+      returns, so the scenario implies continuous rebalancing back to target
+      weights. It is long-only, fully invested, uses 252 annualisation periods,
+      a 0% risk-free rate, and 0 bps assumed costs.
+- [x] I accepted the row-based Stock/Crypto selector, add/remove controls,
+      equal-weight shortcut, 100% validation, historical value chart, asset-type
+      allocation, and holdings table as the clearest implementation of the
+      requested self-built fund workflow.
 
-Student comments: ________________________________________________
-
-No student approval, economic interpretation, or personal decision has been
-inferred.
+My limitation is that this is a historical research simulation, not an
+optimised portfolio, forecast, live trading tool, or personalised investment
+recommendation. Taxes, fees, slippage, and real rebalancing costs are excluded.

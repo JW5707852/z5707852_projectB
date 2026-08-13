@@ -3,6 +3,9 @@ __pycache__/
 *.pyc
 .venv/
 venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
 
 # Raw hosted data is never committed - it loads from the hosted ZIP via src/data_access.py
 data/
@@ -16,3 +19,6 @@ data/
 # Secrets / local
 .streamlit/secrets.toml
 .env
+
+# OS / editor junk
+.DS_Store

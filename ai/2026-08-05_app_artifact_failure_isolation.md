@@ -8,7 +8,7 @@ showing a useful project-relative error message.
 
 ## Prompt(s)
 
-"检查目前应用完整性"
+Check the current application integrity
 
 After the audit identified the failure-isolation issue: "accept"
 

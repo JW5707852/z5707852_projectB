@@ -67,10 +67,6 @@ limitations, and create an AI prompt log. Stop after reporting."
 
 ## What I changed and why
 
-Student correction/confirmation: ________________________________
-
-Reason: ________________________________________________________
-
 The final economic interpretation and any claim about the usefulness of
 sentiment remain for the student to confirm in their own words.
 
@@ -138,10 +134,6 @@ Commands and results are recorded after execution below:
   Git mutation was run.
 
 ### What I changed and why
-
-Student correction/confirmation: ________________________________
-
-Reason: ________________________________________________________
 
 The student must confirm any interpretation of the fixed-data sensitivity and
 fold results; these tests establish reproducibility, not predictive validity.

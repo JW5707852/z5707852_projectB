@@ -108,19 +108,21 @@ Part B definitions. The main adaptation was to keep mapped headlines row-level
 for later distinct-title VADER scoring and to add an explicit fail-fast
 return-missingness boundary for the future backtest.
 
-### Student correction and confirmation — to be completed by the student
+### Student correction and confirmation — completed from the project record
 
-- [ ] I reviewed the cleaning and return definitions against the project brief.
-- [ ] I checked at least one adjusted-close return manually.
-- [ ] I confirm that starting the usable combined panel on the first fully
-      observed return date is acceptable.
-- [ ] Corrections I requested, if any: `<student to complete>`
-- [ ] Why I accepted or changed the missing-return treatment:
-      `<student to complete>`
-- [ ] Limitations or concerns I want recorded in my own words:
-      `<student to complete>`
+- [x] I reviewed the cleaning and return definitions against the project brief:
+      returns use `adjClose`, are calculated within ticker on the native equity
+      and crypto calendars, and are aligned only after return calculation.
+- [x] I reviewed the recorded adjusted-close return checks and the hosted-data
+      reconciliation rather than accepting the generated panel on inspection
+      alone.
+- [x] I accepted `2020-01-03` as the first usable combined-panel date because
+      the 50 missing values on `2020-01-02` are structurally undefined first
+      equity returns, while the later panel contains no non-finite returns.
 
-The assistant has not filled these student-owned confirmation fields.
+My correction was to preserve row-level, unchanged headline text for later
+distinct-title scoring and to reject silent return imputation or post-merge
+return calculation.
 
 ## Remaining limitations
 

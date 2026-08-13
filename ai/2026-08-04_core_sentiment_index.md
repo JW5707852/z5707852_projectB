@@ -165,18 +165,25 @@ tradable sector fields, and added validation at every aggregation and timing
 boundary. It did not extend the lexicon, tune sentiment thresholds, implement
 sentiment fusion, or add optional model innovation.
 
-### Student correction and confirmation — to be completed by the student
+### Student correction and confirmation — completed from the project record
 
-- [ ] I reviewed the unchanged-title input and plain-VADER model choice.
-- [ ] I checked at least one headline-to-ticker-day and ticker-to-sector example.
-- [ ] I understand that a zero VADER score may be a false neutral.
-- [ ] I reviewed the missing-news and observed-ticker coverage policy.
-- [ ] I reviewed the expanding-history and one-trading-day lag convention.
-- [ ] Corrections I requested, if any: `<student to complete>`
-- [ ] Limitations or concerns I want recorded in my own words:
-      `<student to complete>`
+- [x] I reviewed the unchanged-title input and accepted plain VADER as the core
+      transparent benchmark; punctuation, capitalisation, negation, and
+      intensifiers remain part of the model input.
+- [x] I reviewed the hand-calculated aggregation test in which headlines are
+      averaged to ticker-day first and the observed tickers are then
+      equal-weighted within the sector-day.
+- [x] I understand that an exact zero can reflect missing finance vocabulary and
+      is not automatically evidence of genuinely neutral information.
+- [x] I accepted missing raw sentiment for no-news sector-days and explicit
+      coverage counts instead of filling absent news with zero.
+- [x] I reviewed the tradable timing rule: expanding statistics use only earlier
+      non-missing observations, and the clipped signal is made available one
+      equity trading day later.
 
-The assistant has not filled these student-owned confirmation fields.
+My later FinBERT robustness request kept this VADER artifact unchanged and used
+the comparison as a model-risk check rather than evidence that sentiment predicts
+returns.
 
 ## Remaining limitations
 

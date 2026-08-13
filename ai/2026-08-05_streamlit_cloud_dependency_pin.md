@@ -7,7 +7,7 @@ app lightweight and reproducible.
 
 ## Prompt(s)
 
-"报错了" followed by confirmation to apply the identified fix.
+An error has occurred, followed by confirmation to apply the identified fix.
 
 ## What the assistant produced
 

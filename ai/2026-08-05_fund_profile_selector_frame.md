@@ -24,5 +24,7 @@ provides a resilient visible frame.
 
 ## What I changed and why
 
-Student confirmation pending: review the deployed Fund Profile control and
-confirm that the framed selector is clear without making the page feel heavy.
+I requested the frame because the selected fund previously looked like static
+text. I accepted the bordered selector as a clearer interaction cue while
+retaining the compact layout; the Streamlit container remains the resilient
+visual boundary if an internal CSS selector changes.

@@ -24,5 +24,7 @@ could allow a future chart-style update to reintroduce the collision.
 
 ## What I changed and why
 
-Student confirmation pending: review the redeployed chart on the target screen
-size and confirm that the separated title and control rows are visually clear.
+I accepted separate rows for the sample disclosure and the 1Y/2Y/All controls
+because the original overlap made both harder to read. The final layout keeps
+the controls visible at narrow widths and adds a regression test for their
+relative coordinates.

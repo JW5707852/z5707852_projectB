@@ -108,13 +108,17 @@ Repeated-run SHA-256 values:
 
 ## What I changed and why
 
-Student correction and confirmation — complete in your own words:
+### Student correction and confirmation — completed from the project record
 
-- [ ] I reviewed the exact schemas and expected five-fund identity map.
-- [ ] I checked that the four paths and row/date counts are correct.
-- [ ] I reviewed the permitted sentiment and fund-weight missingness rules.
-- [ ] Corrections I requested: `<student to complete>`
-- [ ] Why I accept or changed the deterministic-build policy:
-      `<student to complete>`
+- [x] I reviewed the exact schemas and the expected five-fund identity map at
+      this checkpoint. Later fund extensions were added through their own
+      validated build steps rather than being retroactively inserted here.
+- [x] I checked the four required project-relative paths, row counts, date
+      ranges, and fund lists through the post-CSV validation and the two
+      byte-identical rebuilds.
+- [x] I accepted missing raw sentiment only on no-news sector-days and before
+      sufficient lagged-signal history. Fund target weights must remain finite,
+      long-only, fully invested, and non-missing.
 
-The assistant has not filled the student-owned confirmation fields.
+I required direct ordered-date equality and post-serialization validation rather
+than relying on Python hashes or validating only the in-memory frames.

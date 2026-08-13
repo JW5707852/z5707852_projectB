@@ -8,7 +8,8 @@ existing calculations, artifacts, fund identities, and assessment scope.
 
 ## Prompt(s)
 
-> 参考专业的财经软件，使整个前端界面更美观，更专业
+> Referencing professional financial software to make the entire front-end interface
+  more visually appealing and professional.
 
 Earlier interface feedback from the student also stated that internal CSV paths
 were unnecessary and unsuitable for a client-facing application.
@@ -49,7 +50,9 @@ were unnecessary and unsuitable for a client-facing application.
 
 ## What I changed and why
 
-The student has already confirmed that internal artifact paths should not appear
-in the client interface. Review of the broader redesign is still pending. Before
-submission, the student should record here which visual and wording choices they
-kept, changed, or rejected, and why those choices fit PortFoYou's intended user.
+I confirmed that internal artifact paths, repeated provenance blocks, and
+research-oriented labels should not appear throughout the client interface. I
+kept the compact finance-dashboard hierarchy, investor-facing metric names,
+responsive legends, and contextual help; I rejected repeated branding, large
+presentation-style cards, and unexplained method shorthand because the product
+is intended for individual investors with basic financial literacy.

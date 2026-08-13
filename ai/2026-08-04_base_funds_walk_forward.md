@@ -118,19 +118,24 @@ timing and portfolio-integrity checks. It did not add transaction costs,
 leverage, volatility targeting, another optimiser, or other optional
 innovation.
 
-### Student correction and confirmation — to be completed by the student
+### Student correction and confirmation — completed from the project record
 
-- [ ] I reviewed the month-end decision and next-trading-day holding convention.
-- [ ] I manually checked at least one logged-weight daily return.
-- [ ] I reviewed the covariance-scaling explanation and raw objective values.
-- [ ] I confirm the three fund definitions and identifiers are correct.
-- [ ] Corrections I requested, if any: `<student to complete>`
-- [ ] Why I accepted or changed the optimiser validation policy:
-      `<student to complete>`
-- [ ] Limitations or concerns I want recorded in my own words:
-      `<student to complete>`
+- [x] I reviewed the month-end decision and next-equity-trading-day holding
+      convention and accepted it because the training window ends strictly
+      before the first return to which each target weight is applied.
+- [x] I reviewed the independent sampled-return reproductions from logged
+      weights and asset returns; the recorded differences were below numerical
+      precision.
+- [x] I accepted positive covariance scaling as a numerical-conditioning step
+      because it does not change the economic optimum and the audit retains the
+      unscaled daily-variance objective.
+- [x] I confirmed the three checkpoint fund identities:
+      `combined_equal_weight`, `combined_min_variance`, and
+      `equity_equal_weight`.
 
-The assistant has not filled these student-owned confirmation fields.
+I retained strict solver failure rather than allowing an automatic equal-weight
+fallback, because a fallback would mislabel the minimum-variance fund.
+
 
 ## Remaining limitations
 

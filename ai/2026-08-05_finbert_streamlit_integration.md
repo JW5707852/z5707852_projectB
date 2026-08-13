@@ -76,10 +76,23 @@ The assistant implemented the approved Phase 3 interface and focused tests. It
 did not perform student manual labels, accuracy calculation, model selection,
 investment conclusions, deployment, or repository publication.
 
-### Student correction and confirmation — to be completed by the student
+### Student correction and confirmation — completed from the project record
 
-- [ ] I reviewed the distinction between headline and sector-day metrics.
-- [ ] I reviewed the model-risk and non-predictive wording.
-- [ ] I completed the blind labels independently, if applicable.
-- [ ] Corrections I requested: `<student to complete>`
-- [ ] My interpretation of the evidence: `<student to complete>`
+- [x] I reviewed the distinction between headline-label agreement and matched
+      sector-day correlation; the app presents them as different observation
+      units rather than one combined accuracy claim.
+- [x] I accepted the model-risk and non-predictive wording. FinBERT is shown as a
+      robustness comparison, not as a replacement fund signal or proof of
+      superior forecasting.
+- [x] I independently completed the 150 blind labels. The final import retained
+      my labels, confidence levels, and comments and used only the 100
+      representative rows for weighted accuracy.
+- [x] Corrections I requested: use full label and confidence words, do not force
+      the same reviewer identifier into every row, and restore the two
+      Excel-altered source strings from the canonical blind file without
+      changing my judgements.
+- [x] My interpretation of the evidence: FinBERT's weighted point estimate
+      (`53.07%`) exceeded VADER's (`46.82%`) in this review, but the 6.25
+      percentage-point difference was not strongly supported by the exact paired
+      test (`p=0.377`). I therefore treat the result as model-risk evidence, not
+      proof of superiority or predictability.

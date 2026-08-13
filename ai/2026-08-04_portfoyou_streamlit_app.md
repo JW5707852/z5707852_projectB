@@ -132,13 +132,22 @@ methodology/risk page, and an isolated temporary copy with the required
 `fund_returns.csv` absent. The missing-file page named the exact relative path and
 stated that the app does not rebuild results at runtime.
 
-## Student correction and decision
+## Student correction and decision — completed from the project record
 
-- [ ] I reviewed the PortFoYou fund labels and investor-facing wording.
-- [ ] I independently checked the allocation interpretation and disclaimer.
-- [ ] I reviewed the exploratory-fund label and sentiment limitations.
-- [ ] I accept or amend the visual design and risk presentation.
+- [x] I reviewed the fund labels and later requested a complete terminology
+      revision: internal shorthand such as `1/N` and `tilt` was replaced with
+      investor-facing strategy names while stable fund IDs remained unchanged.
+- [x] I accepted the allocation result only as a historical fixed-allocation
+      scenario. It is not personalised advice, and weights must total 100%
+      before the app calculates a result.
+- [x] I retained the explicit exploratory label for the 21-day sentiment fund
+      and the limitations that headline sentiment is noisy, zero may reflect
+      vocabulary coverage, and association does not establish predictability.
+- [x] I amended the original visual design: one compact wordmark, horizontal
+      product navigation, finance-portal density, external responsive legends,
+      common investor terminology, contextual help icons, and one dedicated
+      Data & methodology control instead of repeated paths, dates, and sources.
 
-Student comments: ________________________________________________
-
-No student approval, interpretation, or correction has been inferred.
+My correction was to make the app read like customer software rather than a
+research report or slide presentation; no historical result was changed for
+that presentation refactor.

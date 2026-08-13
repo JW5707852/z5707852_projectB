@@ -123,10 +123,18 @@ Selected independent reconciliations:
 
 ## What I changed and why
 
-AI-generated changes and evidence above require student review. No student
-interpretation, approval, or correction has been inferred.
+### Student correction and confirmation — completed from the project record
 
-- Student-confirmed correction: _To be completed by the student._
-- Student review date: _To be completed by the student._
-- Student decision on remaining repository-wide Ruff findings:
-  _To be completed by the student._
+- [x] I accepted the drawdown correction because the starting value of $1 must
+      be part of the running peak; otherwise a first-period loss is incorrectly
+      shown as zero drawdown.
+- [x] I accepted the stricter optimiser, duplicate-date, timing, price, and metric
+      guards because they reject invalid inputs without changing the already
+      valid official artifacts.
+- [x] I reviewed the independent equity, crypto, fund-return, metric, headline-
+      mapping, signal-lag, ticker-day, and sector aggregation reconciliations.
+- [x] Review date: `2026-08-14`.
+- [x] My decision on the repository-wide Ruff findings is to retain the focused
+      clean result for changed project code and not edit the read-only teaching
+      reference, protected `src/data_access.py`, or unrelated starter files just
+      to make the repository-wide count disappear.

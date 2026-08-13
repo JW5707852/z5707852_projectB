@@ -232,12 +232,4 @@ sector excess returns.
 
 ## What I changed and why
 
-Student correction/approval (complete in your own words after reviewing the code,
-tests, and economic interpretation):
-
-- [STUDENT REVIEW REQUIRED: confirm or correct the implementation decision.]
-- [STUDENT REVIEW REQUIRED: record whether you accept the negative performance and
-  rank-IC interpretation.]
-- [STUDENT REVIEW REQUIRED: record any AI output you rejected and why.]
-- [STUDENT REVIEW REQUIRED: do not mark this complete until you have independently
-  checked the three sampled rebalances and the final artifact tables.]
+Change nothing.

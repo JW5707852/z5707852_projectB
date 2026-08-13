@@ -277,7 +277,9 @@ def test_evidence_generator_exports_all_core_tables_figures_and_qa(
             combined_weights, "decision_date"
         ),
         "return_risk_comparison": sample_period(
-            core_performance, "sample_start_date", "sample_end_date"
+            evidence.build_common_period_performance_table(core_returns),
+            "sample_start_date",
+            "sample_end_date",
         ),
         "sector_sentiment_time_series": sample_period(
             sources["sentiment"], "date"
@@ -314,3 +316,95 @@ def test_production_paths_are_project_root_relative() -> None:
         "figure_qa.csv",
     }
     assert set(generate_evidence.TABLE_FILENAMES.values()) == expected_tables
+
+
+def test_return_risk_exhibit_uses_family_specific_annualisation() -> None:
+    returns = pd.read_csv(
+        PROJECT_ROOT / "results/data/fund_returns.csv",
+        parse_dates=["date", "decision_date"],
+    )
+    performance = evidence.build_common_period_performance_table(returns)
+    figure, _, context = generate_evidence._return_risk_figure(performance)
+    try:
+        assert context.sample == "2021-01-04 to 2023-12-29"
+        assert "Common chronological window" in context.note
+        assert "sqrt(252) for equity/combined" in context.note
+        assert "sqrt(365) for crypto" in context.note
+        labels = figure.axes[0].get_legend_handles_labels()[1]
+        assert any("Multi-Asset Equal Wt" in label for label in labels)
+        assert any("Crypto Equal Weight" in label for label in labels)
+        assert not any("1/N" in label for label in labels)
+    finally:
+        generate_evidence.plt.close(figure)
+
+
+def test_common_period_crypto_metrics_use_native_calendar(
+    sources: dict[str, pd.DataFrame],
+) -> None:
+    performance = evidence.build_common_period_performance_table(sources["returns"])
+    crypto = performance.set_index("fund")
+
+    assert crypto.loc["crypto_equal_weight", "sample_start_date"] == pd.Timestamp(
+        "2021-01-04"
+    )
+    assert crypto.loc["crypto_equal_weight", "sample_end_date"] == pd.Timestamp(
+        "2023-12-29"
+    )
+    assert crypto.loc["crypto_equal_weight", "observations"] == 1090
+    assert crypto.loc["crypto_min_variance", "observations"] == 1090
+    assert crypto.loc["crypto_equal_weight", "periods_per_year"] == 365
+    assert crypto.loc["crypto_equal_weight", "final_growth_of_1_dollars"] == pytest.approx(2.11)
+    assert crypto.loc["crypto_equal_weight", "geometric_annual_return_pct"] == pytest.approx(28.3)
+    assert crypto.loc["crypto_equal_weight", "sharpe_ratio"] == pytest.approx(0.717)
+    assert crypto.loc["crypto_min_variance", "final_growth_of_1_dollars"] == pytest.approx(1.73)
+    assert crypto.loc["crypto_min_variance", "geometric_annual_return_pct"] == pytest.approx(20.1)
+    assert crypto.loc["crypto_min_variance", "sharpe_ratio"] == pytest.approx(0.608)
+    assert (
+        crypto.loc["crypto_min_variance", "annualised_volatility_pct"]
+        < crypto.loc["crypto_equal_weight", "annualised_volatility_pct"]
+    )
+    assert (
+        crypto.loc["crypto_min_variance", "geometric_annual_return_pct"]
+        < crypto.loc["crypto_equal_weight", "geometric_annual_return_pct"]
+    )
+
+
+def test_growth_and_fusion_exhibits_use_investor_facing_names(
+    sources: dict[str, pd.DataFrame],
+) -> None:
+    paths = evidence.build_return_paths(sources["returns"])
+    figures = [
+        generate_evidence._growth_figure(paths)[0],
+        generate_evidence._fusion_figure(paths)[0],
+    ]
+    try:
+        for figure in figures:
+            labels = [
+                label
+                for axis in figure.axes
+                for label in axis.get_legend_handles_labels()[1]
+            ]
+            assert labels
+            assert not any("1/N" in label for label in labels)
+            assert not any(label.startswith("Combined ") for label in labels)
+    finally:
+        for figure in figures:
+            generate_evidence.plt.close(figure)
+
+
+def test_weight_exhibit_uses_readable_investor_labels(
+    sources: dict[str, pd.DataFrame],
+) -> None:
+    history = evidence.build_combined_ticker_weight_history(sources["weights"])
+    figure, axes, _ = generate_evidence._weight_figure(history)
+    try:
+        titles = [axis.get_title(loc="left") for axis in axes]
+        assert titles == [
+            generate_evidence.WEIGHT_PLOT_LABELS[fund]
+            for fund in evidence.COMBINED_FUNDS
+        ]
+        assert all(axis.get_xlabel() == "" for axis in axes[:-1])
+        assert axes[-1].get_xlabel() == "Decision date"
+        assert all(axis.get_ylabel() == "Weight (%)" for axis in axes)
+    finally:
+        generate_evidence.plt.close(figure)
